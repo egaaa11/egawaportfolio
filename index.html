@@ -516,8 +516,11 @@
       color: #aaa;
     }
 
+    /* 各WORKS全体 */
+
     .work-item {
-      width: 78%;
+      width: 70%;
+
       margin-bottom: 150px;
 
       text-decoration: none;
@@ -526,17 +529,27 @@
       display: block;
     }
 
-    .work-item:nth-of-type(even) {
-      margin-left: auto;
+
+    /* PC：Just Because 左寄せ */
+
+    .work-left {
+      margin-left: 0;
+      margin-right: auto;
     }
 
 
-    /* WORKS画像
-       16:10 → 1:1 に変更
-    */
+    /* PC：Chandigarh 右寄せ */
+
+    .work-right {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+
+    /* WORKS画像 */
 
     .work-image-wrap {
-      width: 70%;
+      width: 100%;
       aspect-ratio: 1 / 1;
 
       overflow: hidden;
@@ -550,16 +563,12 @@
 
       object-fit: cover;
 
-      /* 通常時は拡大しない */
       transform: scale(1);
 
       transition:
         transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
         filter 0.8s ease;
     }
-
-
-    /* ホバー時のみ少しズーム */
 
     .work-item:hover .work-image {
       transform: scale(1.03);
@@ -570,7 +579,9 @@
       margin-top: 22px;
 
       display: grid;
-      grid-template-columns: 60px 1fr auto;
+
+      grid-template-columns:
+        60px 1fr auto;
 
       gap: 20px;
       align-items: baseline;
